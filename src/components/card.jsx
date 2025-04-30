@@ -3,7 +3,7 @@ import Tag from "./tag";
 const Card = ( { title, description, image1, image2, imageAlt, technologies } ) => {
     return (
         <>
-            <div className="flex flex-col relative overflow-hidden shadow-lg bg-neutral-200 h-60 w-[90%] max-w-125 rounded-lg group">
+            <div className="flex flex-col relative overflow-hidden shadow-lg border border-2 border-white bg-neutral-200 h-60 max-w-100 lg:h-80 lg:max-w-150 rounded-lg group">
                 <img src={image1} alt={imageAlt} className="w-full h-full object-cover group-hover:scale-110 transition duration-500"/>
                 {image2 ? 
                     <img src={image2} alt={imageAlt} className="w-full h-full absolute top-0 left-0 object-cover group-hover:scale-110 opacity-0 group-hover:opacity-100 transition duration-500"/>
