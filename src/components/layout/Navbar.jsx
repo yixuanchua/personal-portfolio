@@ -1,4 +1,4 @@
-import logo from '../assets/yx-logo-black.png'
+import logo from '/favicon.svg'
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -26,7 +26,7 @@ const Navbar = () => {
     return (
         <div className={`font-sharetechmono sticky top-0 z-99 text-white h-16 bg-black/100 transition duration-300 ${!scrolled ? "border-b-1 border-gray-400 bg-transparent" : ""}`}>
             <div className="flex h-full items-center">
-                <a onClick={scrollToTop} className="group p-3">
+                <a onClick={scrollToTop} className="group py-3 px-5">
                     <img src={logo} alt="logo" className="w-10 h-10 group-hover:scale-120 transition duration-300" />
                 </a>
 
@@ -39,7 +39,7 @@ const Navbar = () => {
                 </div>
 
                 {/* small screen hamburger icon */}
-                <button onClick={toggleMenu} className="md:hidden ml-auto mx-6 right-0">
+                <button onClick={toggleMenu} className="md:hidden ml-auto mx-5 right-0">
                     <FontAwesomeIcon icon={faBars} className="text-xl"/>
                 </button>
                 

@@ -13,7 +13,7 @@ const Contact = () => {
             </div>
             <div className="flex justify-center">
                 <a href="/Chua_Yi_Xuan_Resume.pdf" target="_blank" className="font-sharetechmono mb-12 px-3 py-2 border border-white hover:border-rose-600 hover:text-rose-600">
-                    View resume
+                    Download CV
                 </a>
             </div>
             <div className="flex justify-center gap-6 pb-18">
@@ -24,6 +24,13 @@ const Contact = () => {
                     <FontAwesomeIcon icon={faGithub} className="text-4xl hover:text-rose-600 hover:scale-110 hover:-translate-y-1 transition duration-300" />
                 </a>
             </div>
+            <footer className="text-white text-xs text-center py-4">
+                <p>© {new Date().getFullYear()} Built by <a href="https://github.com/yixuanchua/personal-portfolio" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white hover:underline">Chua Yi Xuan</a></p>
+                <p>
+                    with <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white hover:underline">React</a> &amp; 
+                    <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 ml-1 hover:text-white hover:underline">Tailwind CSS</a>
+                </p>
+            </footer>
         </div>
     );
 }

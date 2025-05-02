@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react'
-import Navbar from './components/navbar'
-import Home from './pages/home'
-import About from './pages/about'
-import Experience from './pages/experience'
-import Projects from './pages/projects'
-import Contact from './pages/contact'
+import Navbar from './components/layout/Navbar'
+import Hero from './components/sections/Hero'
+import About from './components/sections/About'
+import Experience from './components/sections/Experience'
+import Projects from './components/sections/Projects'
+import Contact from './components/layout/Footer'
 import NET from 'vanta/src/vanta.net'
 import netSplash from './assets/net-splash-ss.png'
+import BackToTopButton from './components/common/BackToTopButton'
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
   // useEffect(() => {
@@ -27,23 +31,31 @@ function App() {
   //   })
   // }, [])
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, [])
+
   return (
     <div className="app bg-black">
       <Navbar />
       {/* <div className="absolute top-0 left-0 min-h-screen w-full z-0" id="vanta"></div> */}
-      <img src={netSplash} className="absolute top-0 left-0 min-h-screen w-full z-0" />
+      <img src={netSplash} className="absolute top-0 left-0 h-screen w-full z-0 object-cover" />
       <div className="relative z-10 bg-gradient-to-t from-black to-black-10">
-        <Home />
+        <Hero />
       </div>
       
       {/* <Navbar />
       <div className="min-h-screen bg-black">
-        <Home />
+        <Hero />
       </div> */}
 
       <div className="min-h-screen">
       <About />
       </div>
+      <BackToTopButton />
       <div className="min-h-screen">
       <Experience />
       <Projects />

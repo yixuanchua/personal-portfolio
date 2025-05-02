@@ -1,12 +1,12 @@
-import selfPortrait from '../assets/self-portrait.jpg'
-import netSS from '../assets/net-ss.png'
+import selfPortrait from '../../assets/self-portrait.jpg'
+import netSS from '../../assets/net-ss.png'
 
 const About = () => {
     return (
         <>
             <h2 id="about" className="text-4xl text-white font-extrabold text-center mb-6 pt-18">About me.</h2>
             <div className="flex flex-col md:flex-row items-stretch items-center justify-center">
-                <img src={netSS} className="absolute"/>
+                <img src={netSS} className="absolute z-0"/>
 
                 <div className='relative h-50 md:h-full md:w-[400px] mx-16 md:mx-6 my-3 z-10 group'>
                 <img src={selfPortrait} alt="self-portrait" className="object-cover h-full w-full rounded-xl shadow-lg" />
