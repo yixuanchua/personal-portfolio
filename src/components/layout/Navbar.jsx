@@ -1,11 +1,12 @@
 import logo from '/favicon.svg'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
     const [ scrolled, setScrolled ] = useState(false);
     const [ isOpen, setIsOpen ] = useState(false);
+    const menuRef = useRef(null);
 
     const toggleMenu = () => {setIsOpen(!isOpen)};
 
@@ -14,10 +15,23 @@ const Navbar = () => {
             const isScrolled = window.scrollY > 100;
             setScrolled(isScrolled);
         };
-
         window.addEventListener("scroll", handleScroll);
         // return () => window, removeEventListener("scroll", handleScroll)
     })
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (menuRef.current && !menuRef.current.contains(e.target)) {
+                setIsOpen(false);
+            }
+        }
+        if (isOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        } else {
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
+        return () => document.removeEventListener("mousedown", handleClickOutside)
+    }, [isOpen])
 
     const scrollToTop = () => {
         window.scrollTo({top: 0});
@@ -32,10 +46,10 @@ const Navbar = () => {
 
                 {/* desktop menu */}
                 <div className="hidden md:flex ml-auto gap-x-3 mr-3 text-sm">
-                    <a href="#about" className="px-3 py-5 self-center hover:text-rose-500 transition duration-300 hover:-translate-y-1 hover:underline hover:underline-offset-8">About me.</a>
-                    <a href="#experience" className="px-3 py-5 self-center hover:text-rose-500 transition duration-300 hover:-translate-y-1 hover:underline hover:underline-offset-8">My experience.</a>
-                    <a href="#projects" className="px-3 py-5 self-center hover:text-rose-500 transition duration-300 hover:-translate-y-1 hover:underline hover:underline-offset-8">My projects.</a>
-                    <a href="#contact" className="px-3 py-5 self-center hover:text-rose-500 transition duration-300 hover:-translate-y-1 hover:underline hover:underline-offset-8">Contact me.</a>
+                    <a href="#about" className={`px-3 py-5 self-center hover:text-rose-500 transition duration-300 hover:-translate-y-1 hover:underline hover:underline-offset-8`}>About me.</a>
+                    <a href="#experience" className={`px-3 py-5 self-center hover:text-rose-500 transition duration-300 hover:-translate-y-1 hover:underline hover:underline-offset-8`}>My experience.</a>
+                    <a href="#projects" className={`px-3 py-5 self-center hover:text-rose-500 transition duration-300 hover:-translate-y-1 hover:underline hover:underline-offset-8`}>My projects.</a>
+                    <a href="#contact" className={`px-3 py-5 self-center hover:text-rose-500 transition duration-300 hover:-translate-y-1 hover:underline hover:underline-offset-8`}>Contact me.</a>
                 </div>
 
                 {/* small screen hamburger icon */}
@@ -46,7 +60,7 @@ const Navbar = () => {
             </div>
             {/* small screen menu */}
             {/* {isOpen && ( */}
-                    <div className={`fixed top-0 right-0 flex flex-col items-end h-screen py-5 px-2.5 bg-white/10 backdrop-blur-sm transform transition-transform duration-300 ${
+                    <div ref={menuRef} className={`fixed top-0 right-0 flex flex-col items-end h-screen py-5 px-2.5 bg-white/10 backdrop-blur-sm transform transition-transform duration-300 ${
                         isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                         <button onClick={toggleMenu} className="md:hidden ml-auto mx-6 right-0 mb-8">
                             <FontAwesomeIcon icon={faXmark} className="text-xl"/>
