@@ -6,8 +6,8 @@ const Hero = () => {
                 <span>Hi,&nbsp;</span>
                 <span>I'm Chua Yi Xuan</span>
             </h1>
-            <h2 className="font-sharetechmono flex justify-center text-white mx-4">
-                A web developer. Someone who wants to make the world a better place.
+            <h2 className="font-sharetechmono flex justify-center text-white mx-6">
+                A web developer. A builder of better experiences.
             </h2>
             <div className='flex justify-center'>
                 <a href="#contact" className="font-sharetechmono mt-8 px-3 py-2 text-white border border-white hover:border-rose-500 hover:text-rose-500">

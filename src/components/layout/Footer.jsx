@@ -8,7 +8,7 @@ const Contact = () => {
             <div className=" flex justify-center items-center">
                 <div className="relative group w-[260px] my-6">
                     <h3 className="relative z-10 font-sharetechmono font-semibold text-xl">cyx.chuayixuan@gmail.com</h3>
-                    <span className="absolute bottom-0 left-0 w-full bg-rose-600/70 h-[10px] group-hover:h-full transition-all duration-200"></span>
+                    <span className="absolute bottom-0 left-0 w-full bg-rose-500/70 h-[10px] group-hover:h-full transition-all duration-200"></span>
                 </div>
             </div>
             <div className="flex justify-center">

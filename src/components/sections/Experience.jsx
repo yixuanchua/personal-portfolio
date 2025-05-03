@@ -26,12 +26,12 @@ const experiences = [
 
 const Experience = () => {
     return (
-        <>
-            <h2 id="experience" className="relative text-4xl text-white font-extrabold text-center z-10 my-6 pt-18">My experience.</h2>
+        <div id="experience">
+            <h2 className="relative text-4xl text-white font-extrabold text-center z-10 my-6 pt-18">My experience.</h2>
             {experiences.map((exp, index) => (
                 <ExperienceCard key={index} title={exp.title} company={exp.company} points={exp.points} date={exp.date} />
             ))}
-        </>
+        </div>
     );
 }
 
