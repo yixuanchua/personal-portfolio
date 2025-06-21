@@ -38,13 +38,15 @@ const ProjectCard = ({ title, description, image1, image2, imageAlt, technologie
             <div data-aos="zoom-in-up" className="relative max-w-[650px] w-full overflow-hidden z-10 group">
                 <div className="absolute bg-rose-500 w-sm sm:w-100 h-40 -translate-x-24 z-0 group-hover:scale-120 transition duration-300"></div>
                 <div className="z-10 my-2 mx-6">
-                    <h3 className="relative text-lg font-sharetechmono font-bold">{title}</h3>
+                    <h3 className="relative text-lg font-sharetechmono font-bold text-rose-200">{title}</h3>
                     <div className="relative aspect-w-16 aspect-h-9 aspect-video">
-                        <img src={image1} alt={imageAlt} className="group-hover:-translate-y-2 relative mt-1 z-10 w-full h-full object-cover shadow-xl border-2 border-transparent hover:border-white transition duration-200" />
-                        <div className="absolute top-0 right-2 mx-2 my-3 text-white z-99 text-lg">
-                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                        </div>
-                        <div className="absolute bg-red-200"></div>
+                        <a href={link} target={"_blank"}>
+                            <div className="absolute w-full h-full z-50 bg-black/20"></div>
+                            <img src={image1} alt={imageAlt} className="group-hover:-translate-y-2 relative mt-1 z-10 w-full h-full object-cover shadow-xl border-2 border-transparent hover:border-white transition duration-200" />
+                            <div className="absolute top-0 right-2 mx-2 my-3 text-white z-99 text-lg">
+                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                            </div>
+                        </a>
                     </div>
                     <p className="relative z-10 text-white text-sm sm:text-base font-aileron my-2">{description}</p>
                     <div className="relative flex gap-4 justify-left my-4 z-10">
