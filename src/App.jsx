@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     // if (!isMobile && !vantaEffect && typeof window !== "undefined") {
-    if (!vantaEffect && typeof window !== "undefined") {
+    if (!vantaEffect && vantaRef.current && typeof window !== "undefined") {
       setVantaEffect(
         NET({
           el: vantaRef.current,
@@ -50,12 +50,12 @@ function App() {
   return (
     <div className="app bg-black">
       <Navbar />
-      {isMobile ? (
+      {/* {isMobile ? (
         <img src={netSplash} className="absolute top-0 left-0 h-screen w-full z-0 object-cover" />
       ) : (
         <div ref={vantaRef} className="absolute top-0 left-0 min-h-screen w-full z-0" id="vanta"></div>
-      )}
-      {/* <div ref={vantaRef} className="absolute top-0 left-0 min-h-screen w-full z-0" id="vanta"></div> */}
+      )} */}
+      <div ref={vantaRef} className="absolute top-0 left-0 min-h-screen w-full z-0" id="vanta"></div>
       <div className="relative z-10 bg-gradient-to-t from-black to-black-10 -translate-y-16">
         <Hero />
       </div>
