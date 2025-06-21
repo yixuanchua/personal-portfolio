@@ -19,6 +19,7 @@ function App() {
 
   useEffect(() => {
     // if (!isMobile && !vantaEffect && typeof window !== "undefined") {
+    if (!vantaEffect && typeof window !== "undefined") {
       setVantaEffect(
         NET({
           el: vantaRef.current,
@@ -36,7 +37,7 @@ function App() {
           spacing: 18.00
         })
       );
-    // }
+    }
   }, [vantaEffect]);
 
   useEffect(() => {
