@@ -3,7 +3,7 @@
 </h1>
 <p>A personal website to display my work, resume, and contact information. The website is built using React and Tailwind CSS.</p>
 <span>Visit page at <a href="http://yixuanchua.vercel.app" target="_blank">yixuanchua.vercel.app</a>.</span>
-<a href="http://yixuanchua.vercel.app"><img src="src/assets/website-preview.gif"></a>
+<a href="http://yixuanchua.vercel.app" target="_blank"><img src="src/assets/website-preview.gif"></a>
 
 
 ## Features
