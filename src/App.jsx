@@ -18,7 +18,7 @@ function App() {
   const isMobile = window.innerWidth < 768;
 
   useEffect(() => {
-    if (!isMobile && !vantaEffect && typeof window !== "undefined") {
+    // if (!isMobile && !vantaEffect && typeof window !== "undefined") {
       setVantaEffect(
         NET({
           el: vantaRef.current,
@@ -36,7 +36,7 @@ function App() {
           spacing: 18.00
         })
       );
-    }
+    // }
   }, [vantaEffect]);
 
   useEffect(() => {
@@ -55,7 +55,7 @@ function App() {
         <div ref={vantaRef} className="absolute top-0 left-0 min-h-screen w-full z-0" id="vanta"></div>
       )}
       {/* <div ref={vantaRef} className="absolute top-0 left-0 min-h-screen w-full z-0" id="vanta"></div> */}
-      <div className="relative z-10 bg-gradient-to-t from-black to-black-10">
+      <div className="relative z-10 bg-gradient-to-t from-black to-black-10 -translate-y-16">
         <Hero />
       </div>
       <About />
