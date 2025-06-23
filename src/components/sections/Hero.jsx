@@ -29,8 +29,8 @@ const Hero = () => {
                     })
                 );
             }
-        }, 100);
-        
+        }, 300);
+
         return () => clearTimeout(timeout);
     }, [vantaEffect]);
 
