@@ -6,7 +6,7 @@ import Experience from './components/sections/Experience'
 import Projects from './components/sections/Projects'
 import Contact from './components/layout/Footer'
 import NET from 'vanta/src/vanta.net'
-import netSplash from './assets/net-splash-ss.png'
+// import netSplash from './assets/net-splash-ss.png'
 import BackToTopButton from './components/common/BackToTopButton'
 
 import AOS from 'aos';
@@ -15,7 +15,7 @@ import 'aos/dist/aos.css';
 function App() {
   const vantaRef = useRef(null);
   const [vantaEffect, setVantaEffect] = useState(null);
-  const isMobile = window.innerWidth < 768;
+  // const isMobile = window.innerWidth < 768;
 
   useEffect(() => {
     // if (!isMobile && !vantaEffect && typeof window !== "undefined") {
@@ -55,10 +55,7 @@ function App() {
       ) : (
         <div ref={vantaRef} className="absolute top-0 left-0 min-h-screen w-full z-0" id="vanta"></div>
       )} */}
-      <div ref={vantaRef} className="absolute top-0 left-0 min-h-screen w-full z-0" id="vanta"></div>
-      <div className="relative z-10 bg-gradient-to-t from-black to-black-10 -translate-y-16">
-        <Hero />
-      </div>
+      <Hero />
       <About />
       <BackToTopButton />
       <div className="min-h-screen">
