@@ -8,26 +8,30 @@ const Hero = () => {
     const isMobile = window.innerWidth < 768;
 
     useEffect(() => {
-        // if (!isMobile && !vantaEffect && typeof window !== "undefined") {
-        if (!vantaEffect && vantaRef.current && typeof window !== "undefined") {
-        setVantaEffect(
-            NET({
-            el: vantaRef.current,
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0xfa6a8b,
-            backgroundColor: 0x190e2d,
-            points: 7.00,
-            maxDistance: 15.00,
-            spacing: 18.00
-            })
-        );
-        }
+        const timeout = setTimeout(() => {
+            // if (!isMobile && !vantaEffect && typeof window !== "undefined") {
+            if (!vantaEffect && vantaRef.current && typeof window !== "undefined") {
+                setVantaEffect(
+                    NET({
+                    el: vantaRef.current,
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 200.00,
+                    minWidth: 200.00,
+                    scale: 1.00,
+                    scaleMobile: 1.00,
+                    color: 0xfa6a8b,
+                    backgroundColor: 0x190e2d,
+                    points: 7.00,
+                    maxDistance: 15.00,
+                    spacing: 18.00
+                    })
+                );
+            }
+        }, 100);
+        
+        return () => clearTimeout(timeout);
     }, [vantaEffect]);
 
     return (
